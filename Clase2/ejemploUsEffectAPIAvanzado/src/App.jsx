@@ -1,27 +1,27 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import fetchPosts from '../Services/post.js' //Importar la función del otro archivo
-import Container from '../components/Container'
-import PostDetail from '../components/PostDetail'
-
+import { fetchPosts, fetchPost } from '../Services/post.js'
+import Container from '/components/Container.jsx'
+import PostDetail from '/components/PostDetail.jsx'
+import PostDetailAlt from '/components/PostDetailAlt.jsx'
 
 function App() {
-  const [posts, setPosts] = useState([])
+  const [selectedPost, setSelectedPost] = useState(null)
   const [selectedPostId, setSelectedPostId] = useState(null)
   const [posts, setPosts] = useState([])
+
   useEffect(() => {
-    
-    console.log("UseEffect ejecutado")
-      fetchPosts().then((data) =>
-      setPosts(data)
-    
-    )
+    fetchPosts().then(data => setPosts(data))
   }, [])
+
+
+  function handleClick(id) {
+    fetchPost(id).then(data => setSelectedPost(data))
+    setSelectedPostId(id) // Forma alterna
+  }
+
   return (
-    
-    <div>
+    <div className='main'>
       <Container posts={posts} handleClick={handleClick} />
       {selectedPost && <PostDetail post={selectedPost} />}
       <PostDetailAlt id={selectedPostId} />

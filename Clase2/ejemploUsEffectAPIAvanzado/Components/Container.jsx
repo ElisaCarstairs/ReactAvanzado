@@ -1,4 +1,4 @@
-//import Post from './Post'
+import Post from './Post.jsx'
 import './Container.css'
 export default function Container({ posts, handleClick }) {
     return (

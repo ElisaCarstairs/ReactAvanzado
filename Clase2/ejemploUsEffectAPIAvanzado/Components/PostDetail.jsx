@@ -1,10 +1,10 @@
-//import './PostDetail.css'
+import './PostDetail.css'
 
 export default function PostDetail({ post }) {
     const { title , body } = post 
 
     return (
-        <div className="detail">
+        <div>
             <h2>{title}</h2>
             <p>{body}</p>
         </div>

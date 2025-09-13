@@ -1,4 +1,4 @@
-//import './Post.css'
+import './Post.css'
 export default function Post({ post, handleClick }) {
     const { userId, id, title, body } = post
 
