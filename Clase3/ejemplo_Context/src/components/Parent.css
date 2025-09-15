@@ -1,0 +1,8 @@
+.parent-container {
+    border: 2px solid rgb(27, 91, 122);
+    padding: 5px;
+    margin: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(27, 91, 122);
+    font-size: 8px;
+}
