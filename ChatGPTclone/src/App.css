@@ -1,0 +1,96 @@
+/* Contenedor general del chat */
+.chat-box {
+  width: 100%;
+  max-width: 600px;
+  height: 70vh;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f5f7fa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Roboto', sans-serif; /* fuente por defecto para user */
+}
+
+/* Mensajes */
+.chat-box p {
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+/* Burbuja azul para el usuario */
+.chat-box p.user {
+  background: #d0e8ff;
+  color: #0b3d91;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Burbuja roja para la LLM */
+.chat-box p.LLM {
+  background: #ffe3e3;
+  color: #a10000;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/* Input y botón */
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #0b3d91;
+  box-shadow: 0 0 5px rgba(11, 61, 145, 0.3);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #0b3d91;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0650a1;
+}
+
+/* Scroll elegante */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: #f5f7fa;
+}
