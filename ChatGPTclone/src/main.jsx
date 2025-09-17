@@ -1,14 +1,12 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App.jsx';
-import ChatHeader from './components/ChatHeader.jsx'; // Fíjate en el nombre y carpeta
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import { ChatProvider } from './context/ChatContext.jsx' // 👈 nuevo
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <>
-      <ChatHeader />
+    <ChatProvider>
       <App />
-    </>
-  </StrictMode>
-);
+    </ChatProvider>
+  </StrictMode>,
+)
